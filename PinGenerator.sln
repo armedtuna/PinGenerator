@@ -4,6 +4,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PinGenerator", "PinGenerato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{EF0AE640-8B19-4C35-AE32-D11CF5B64D3B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{831F3E6B-5D7D-4354-8F63-E83BFF68A7EB}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{D4181D55-9814-4728-8544-19FBDB5AE402}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +26,9 @@ Global
 		{EF0AE640-8B19-4C35-AE32-D11CF5B64D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF0AE640-8B19-4C35-AE32-D11CF5B64D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF0AE640-8B19-4C35-AE32-D11CF5B64D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4181D55-9814-4728-8544-19FBDB5AE402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4181D55-9814-4728-8544-19FBDB5AE402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4181D55-9814-4728-8544-19FBDB5AE402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4181D55-9814-4728-8544-19FBDB5AE402}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
