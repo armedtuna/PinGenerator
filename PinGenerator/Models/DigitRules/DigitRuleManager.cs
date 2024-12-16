@@ -1,8 +1,6 @@
-using PinGenerator.Models.Digits;
-
 namespace PinGenerator.Models.DigitRules;
 
-public class DigitRuleManager(IDigitRule[] digitRules, IDigitProvider digitProvider) : IDigitRuleManager
+public class DigitRuleManager(IDigitRule[] digitRules) : IDigitRuleManager
 {
     public char ApplyRules(char? previousDigit, char digit)
     {

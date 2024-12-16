@@ -18,7 +18,7 @@ public class PinGeneratorTests
                 (_, digit) =>
                     digitProvider.NextSequentialDigit(digit))
         ];
-        DigitRuleManager digitRuleManager = new(rules, digitProvider);
+        DigitRuleManager digitRuleManager = new(rules);
         _sut = new PinGenerator.Models.Generators.PinGenerator(digitRuleManager, digitProvider);
     }
     

@@ -17,6 +17,5 @@ classDiagram
     IPinGenerator ..> IDigitRuleManager
     IPinGenerator ..> IDigitProvider
     IDigitRuleManager ..> IDigitRule
-    IDigitRuleManager ..> IDigitProvider
     IDigitRule ..> IDigitProvider
 ```
