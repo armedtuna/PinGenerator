@@ -1,5 +1,4 @@
-using PinGenerator.Models.DigitRules;
-using PinGenerator.Models.Digits;
+using PinGenerator.Models.Builders;
 
 namespace IntegrationTests.Models.Generators;
 
@@ -9,17 +8,8 @@ public class PinGeneratorTests
 
     public PinGeneratorTests()
     {
-        NumericDigitProvider digitProvider = new();
-        IDigitRule[] rules =
-        [
-            new NoConsecutiveRepeatDigitsRule((_, digit) =>
-                digitProvider.NextSequentialDigit(digit)),
-            new NoIncrementalDigitsRule(digitProvider,
-                (_, digit) =>
-                    digitProvider.NextSequentialDigit(digit))
-        ];
-        DigitRuleManager digitRuleManager = new(rules);
-        _sut = new PinGenerator.Models.Generators.PinGenerator(digitRuleManager, digitProvider);
+        PinGeneratorBuilder pinGeneratorBuilder = new();
+        _sut = pinGeneratorBuilder.Build();
     }
     
     [TestCase(1, 1)]

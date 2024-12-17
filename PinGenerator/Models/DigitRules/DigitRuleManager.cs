@@ -1,6 +1,6 @@
 namespace PinGenerator.Models.DigitRules;
 
-public class DigitRuleManager(IDigitRule[] digitRules) : IDigitRuleManager
+public class DigitRuleManager(IEnumerable<IDigitRule> digitRules) : IDigitRuleManager
 {
     public char ApplyRules(char? previousDigit, char digit)
     {

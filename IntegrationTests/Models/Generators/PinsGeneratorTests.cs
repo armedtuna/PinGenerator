@@ -1,26 +1,16 @@
-using PinGenerator.Models.DigitRules;
-using PinGenerator.Models.Digits;
+using PinGenerator.Models.Builders;
 using PinGenerator.Models.Generators;
 
 namespace IntegrationTests.Models.Generators;
 
 public class PinsGeneratorTests
 {
-    private PinsGenerator _sut;
+    private readonly PinsGenerator _sut;
 
     public PinsGeneratorTests()
     {
-        NumericDigitProvider digitProvider = new();
-        IDigitRule[] rules =
-        [
-            new NoConsecutiveRepeatDigitsRule((_, digit) =>
-                digitProvider.NextSequentialDigit(digit)),
-            new NoIncrementalDigitsRule(digitProvider,
-                (_, digit) =>
-                    digitProvider.NextSequentialDigit(digit))
-        ];
-        DigitRuleManager digitRuleManager = new(rules);
-        PinGenerator.Models.Generators.PinGenerator pinGenerator = new(digitRuleManager, digitProvider);
+        PinGeneratorBuilder pinGeneratorBuilder = new();
+        PinGenerator.Models.Generators.PinGenerator pinGenerator = pinGeneratorBuilder.Build();
         _sut = new PinsGenerator(pinGenerator, 4);
     }
 
