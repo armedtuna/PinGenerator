@@ -27,6 +27,6 @@ PS While adding the tests, so minor bugs were discovered, but these were fixed b
 
 Added a simple diagram to show how the interfaces relate to each other. As I did that I discovered that there was an unnecessary dependency (and I removed that).
 
-The goal of the diagram was also to be able to see the overall design. I'm not fully happy that both Pin Generator and No-Incremental Digits Rule depending on Digit Provider. I briefly tried changing the No-Incremental Digits Rule to have delegates instead of a dependency, but that didn't seem an improvement.
+The goal of the diagram was also to be able to see the overall design. I'm not fully happy that both Pin Generator and No-Incremental Digits Rule depend on Digit Provider. I briefly tried changing the No-Incremental Digits Rule to have delegates instead of a dependency, but that didn't seem an improvement.
 
 In the end it seemed best to add a builder to set up the Pin Generator and its dependencies. I also added a test for the builder, but I'm unsure how to test that the private dependencies were created correctly. Thoughts of reflection came up, but I'm not keen on heading down that path. So I concluded that being able to run the builder's Pin Generator without exception is "acceptable".
